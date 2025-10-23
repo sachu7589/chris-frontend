@@ -9,7 +9,9 @@
     "build:vercel": "vite build --mode production",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "postinstall": "chmod +x node_modules/.bin/* || true"
+    "postinstall": "chmod +x node_modules/.bin/* 2>/dev/null || true",
+    "vercel-build": "npm run postinstall && npm run build",
+    "build:node": "node build.js"
   },
   "dependencies": {
     "@google-cloud/local-auth": "^3.0.1",
